@@ -1,5 +1,5 @@
 # machine-learning-kit
-### **KNN**
+### KNN
   - core function: **classify0 ()** in *kNN.py*
   - the 1st example: classify dating person, and training set is in the **file**: *datingTestSet.txt*
 ```
@@ -9,7 +9,7 @@ python kNN-datingClassifier.py
 ```
 python kNN-writingClassifier.py
 ```
-### **Decision Tree**
+### Decision Tree
   - the structure of decision tree is composed of dicts:
   ```
   {A:{B:{...}}}
