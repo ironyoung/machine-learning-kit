@@ -20,7 +20,7 @@ python kNN-writingClassifier.py
     - read decision tree from file: **grabTree (filename)**
     - classifier: **classify (inputTree, featLabels, testVec)**
   - interfaces in *treePlot.py*
-    - plot tree: **createPlot (mytree)**
+    - plot tree: **createPlot (inputTree)**
   - the 1st example: classify dating person, and training set is in the **file**: *lenses.txt*
 ```
 python tree-glassClassifier.py
