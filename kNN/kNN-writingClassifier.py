@@ -3,35 +3,12 @@ import operator
 import matplotlib
 import matplotlib.pyplot as plt
 from os import listdir
-
-
-def createDataSet():
-	group = array([[1.0, 1.1], [1.0, 1.0], [0, 0], [0, 0.1]])
-	labels = ['A', 'A', 'B', 'B']
-	return group, labels
-
-
-def classify0(inVec, trainingDataSet, trainingLabels, k):
-	'''
-	the input is a vector
-	'''
-	dataSetSize = trainingDataSet.shape[0]
-	diffMat = tile(inVec, (dataSetSize, 1)) - trainingDataSet
-	sqDiffMat = diffMat ** 2
-	sqDistances = sqDiffMat.sum(axis=1)
-	distances = sqDistances ** 0.5
-	sortedDistIndicies = distances.argsort()
-	classCount = {}
-	for i in range(k):
-		voteLabel = trainingLabels[sortedDistIndicies[i]]
-		classCount[voteLabel] = classCount.get(voteLabel, 0) + 1
-	sortedClassCount = sorted(classCount.iteritems(), key=operator.itemgetter(1), reverse = True)
-	return sortedClassCount[0][0]
+import kNN
 
 
 def img2vector(filename, height, width):
 	'''
-	the height and width of the image
+	the height and width of the digital image
 	'''
 	size = height * width
 	retVec = zeros((1, 1024))
@@ -64,9 +41,12 @@ def handwritingClassTest(height, width):
 	for i in range(mTest):
 		fileNameStr = testFileList[i]
 		fileStr = fileNameStr.split('.')[0]
+		'''
+		the file name consists of 'class name'_'...'
+		'''
 		classNumStr  = int(fileStr.split('_')[0])
 		vecUnderTest = img2vector('testDigits/%s' % fileNameStr, height, width)
-		classifierResult = classify0(vecUnderTest, trainingMat, hwLabels, 5)
+		classifierResult = kNN.classify0(vecUnderTest, trainingMat, hwLabels, 5)
 		print "the classifier came back with: %d, the real answer is: %d" % (classifierResult, classNumStr)
 		if(classifierResult != classNumStr):
 			errorCount += 1
