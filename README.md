@@ -21,7 +21,7 @@ python kNN-writingClassifier.py
     - classifier: **classify (inputTree, featLabels, testVec)**
   - interfaces in *treePlot.py*
     - plot tree: **createPlot (inputTree)**
-  - the 1st example: classify dating person, and training set is in the **file**: *lenses.txt*
+  - the 1st example: classify glasses, and training set is in the **file**: *lenses.txt*
 ```
 python tree-glassClassifier.py
 ```
