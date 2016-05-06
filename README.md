@@ -1,11 +1,12 @@
 # machine-learning-kit
+Please install some Python libraries (*numpy*, *scipy*, *matplotlib*) at first.
 ### KNN
   - core function: **classify0 ()** in *kNN.py*
-  - the 1st example: classify dating person, and training set is in the **file**: *datingTestSet.txt*
+  - example 1: classify dating person, and training set is in the file: *datingTestSet.txt*
 ```
 python kNN-datingClassifier.py
 ```
-  - the 2nd example: hand writing recognition, and training set (digital) and test set (digital) are in the **folders**
+  - example 2: hand writing recognition, and training set (digital) and test set (digital) are in the file folders: *trainingDigits* and *testDigits*
 ```
 python kNN-writingClassifier.py
 ```
@@ -21,7 +22,19 @@ python kNN-writingClassifier.py
     - classifier: **classify (inputTree, featLabels, testVec)**
   - interfaces in *treePlot.py*
     - plot tree: **createPlot (inputTree)**
-  - the 1st example: classify glasses, and training set is in the **file**: *lenses.txt*
+  - example 1: classify glasses, and training set is in the file: *lenses.txt*
 ```
 python tree-glassClassifier.py
+```
+### Naive Bayes
+  - interfaces in *bayes.py*
+    - create vocabulary list, without repeat words: **createVocabList (dataSet)**
+    - set-of-words (exist or not, 0 or 1): **setOfWords2Vec(vocabList, inputSet)**
+    - bag-of-words (occurrences of words): **bagOfWords2Vec(vocabList, inputSet)**
+    - train: **trainNB0(trainMatrix, trainClass)**
+    - classifier: **classifyNB(vec2Classify, p0Vec, p1Vec, pClass1)**
+    - test: **testingNB()**
+  - example 1: classify spams, and training set is in the file folder: *email* (randomly split data set into 2 sets: training set, test set)
+```
+python bayes_spam.py
 ```
