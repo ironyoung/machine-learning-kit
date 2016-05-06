@@ -34,7 +34,7 @@ python tree-glassClassifier.py
     - train: **trainNB0(trainMatrix, trainClass)**
     - classifier: **classifyNB(vec2Classify, p0Vec, p1Vec, pClass1)**
     - test: **testingNB()**
-  - example 1: classify spams, and training set is in the file folder: *email* (randomly split data set into 2 sets: training set, test set)
+  - example 1: classify spams, and the data set is in the file folder: *email* (randomly split data set into training set and test set)
 ```
 python bayes_spam.py
 ```
