@@ -2,11 +2,11 @@
 Please install some Python libraries (*numpy*, *scipy*, *matplotlib*) at first.
 ### KNN
   - core function: **classify0 ()** in *kNN.py*
-  - example 1: classify dating person, and training set is in the file: *datingTestSet.txt*
+  - example 1: classify dating person. Training set is *datingTestSet.txt*
 ```
 python kNN-datingClassifier.py
 ```
-  - example 2: hand writing recognition, and training set (digital) and test set (digital) are in the file folders: *trainingDigits* and *testDigits*
+  - example 2: hand writing recognition. Training set (digital) and test set (digital) are in file folders: *trainingDigits* and *testDigits*
 ```
 python kNN-writingClassifier.py
 ```
@@ -22,7 +22,7 @@ python kNN-writingClassifier.py
     - classifier: **classify (inputTree, featLabels, testVec)**
   - interfaces in *treePlot.py*
     - plot tree: **createPlot (inputTree)**
-  - example 1: classify glasses, and training set is in the file: *lenses.txt*
+  - example 1: classify glasses. Training set is *lenses.txt*
 ```
 python tree-glassClassifier.py
 ```
@@ -34,7 +34,16 @@ python tree-glassClassifier.py
     - train: **trainNB0(trainMatrix, trainClass)**
     - classifier: **classifyNB(vec2Classify, p0Vec, p1Vec, pClass1)**
     - test: **testingNB()**
-  - example 1: classify spams, and data set is in the file folder: *email* (randomly split data set into training set and test set)
+  - example 1: classify spams. Data set is in file folder: *email* (randomly split data set into training set and test set)
 ```
 python bayes_spam.py
+```
+### Logistic Regression
+  - interfaces in *logReg.py*
+    - load test data of *testSet.txt*: **loadDataSet()**
+    - batch gradient ascend method: **gradAscent(dataMatIn, classLabels, maxCycles=500)**
+    - stochastic gradient ascend method: **stocGradAscent0(dataMatrix, classLabels)**, **stocGradAscent1(dataMatrix, classLabels, numIter=150)**
+  - example 1: horse colic classifier. Training data is *horseColicTraining.txt* and test data is *horseColicTest.txt*
+```
+python horseColic_logReg.py
 ```
