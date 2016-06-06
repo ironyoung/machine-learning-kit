@@ -24,6 +24,7 @@ def colicTest():
 		trainingSet.append(lineArr)
 		trainingLabel.append(float(currLine[21]))
 
+	# trainWeights= gradAscent(array(trainingSet), trainingLabel, 500)
 	trainWeights= stocGradAscent1(array(trainingSet), trainingLabel, 500)
 	errorCount 	= 0
 	numTestVec	= 0.0
