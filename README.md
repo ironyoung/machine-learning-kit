@@ -47,3 +47,36 @@ python bayes_spam.py
 ```
 python horseColic_logReg.py
 ```
+### SVM (SMO)
+#### Please read this English paper: <[Improvements to Platt's SMO Algorithm for SVM Classifier Design](http://www.mitpressjournals.org/doi/abs/10.1162/089976601300014493#.V8a65_l95aQ)> or this Chinese book: 《[统计学习方法](https://book.douban.com/subject/10590856/)》, and realize meanings of SVM and SMO first.
+  - main interfaces in *findSupportVector.py*
+    - load test data of *testSet.txt*: **loadDataSet(filename)**
+    - find random j (!= i): **selectJrand(i, m)**
+    - simple SMO algorithm (not Platt SMO): **smoSimple(dataMatIn, classLabels, C, toler, maxIter)**
+  - example 1: find support vectors in *testSet.txt*:
+```
+python findSupportVector.py
+```
+  - main interfaces in *findPlattSupportVector.py*
+    - load test data of *testSet.txt*: **loadDataSet(filename)**
+    - find random j (!= i): **selectJrand(i,oS,Ei)**
+    - Platt SMO algorithm without kernel function: **smoP(dataMatIn, classLabels, C, toler, maxIter, kTup=('lin', 0))**
+    - compute weights from alphas **calcWs(alphas, dataArr, classLabels)**
+  - example 2: find support vectors in *testSet.txt*:
+```
+python findPlattSupportVector.py
+```
+  - main interfaces in *smoKernelPlattClassifier.py*
+    - load test data of *testSet.txt*: **loadDataSet(filename)**
+    - find random j (!= i): **selectJrand(i,m)**
+    - Platt SMO algorithm with RBF kernel function: **smoP(dataMatIn, classLabels, C, toler, maxIter, kTup=('lin', 0))**
+    - compute the kernel or transform data to a higher dimensional: **spacekernelTrans(X, A, kTup)**
+    - compute weights from alphas **calcWs(alphas, dataArr, classLabels)**
+  - example 3: find support vectors in *testSet.txt*:
+```
+python smoKernelPlattClassifier.py
+```
+  - example 4: hand writing recognition. Training set (digital) and test set (digital) are in file folders: *trainingDigits* and *testDigits*:
+```
+python smo-writingClassifier.py
+```
